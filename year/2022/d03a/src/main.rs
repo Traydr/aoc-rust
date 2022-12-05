@@ -10,8 +10,6 @@ fn main() {
         let length = line.len();
         let halves = line.clone().split_at(length/2);
 
-        println!("Original:\n\t{}\nSplit:\n\t{} {}", line, halves.0, halves.1);
-
         for c in halves.0.chars() {
             if halves.1.contains(c) {
                 println!("Char {} is int {}", c, char_to_int(c));
