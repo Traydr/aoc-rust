@@ -14,4 +14,4 @@ You can find the advent of code website [here](https://adventofcode.com/)
 | 4 | ✅ | ✅ |
 | 5 | ✅ | ✅ |
 | 6 | ✅ | ✅ |
-| 1 | ✅ | ✅ |
+| 7 | ❌ | ❌ |
