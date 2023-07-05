@@ -1,4 +1,4 @@
-# AOC Rust Solutions
+# AOC in Rust
 
 ## info
 
