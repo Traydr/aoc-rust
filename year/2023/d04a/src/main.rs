@@ -18,7 +18,7 @@ fn get_points(input: &str) -> u32 {
     let mut points: u32 = 0;
     for line in input.lines() {
         let card: Vec<&str> = line.split(": ").collect();
-        let card_num_str: String = card[0].chars().filter(|c| c.is_numeric()).collect();
+        // let card_num_str: String = card[0].chars().filter(|c| c.is_numeric()).collect();
         // let card_num: u32 = card_num_str.parse::<u32>().unwrap();
 
         let numbers: Vec<&str> = card[1].split(" | ").collect();
@@ -36,7 +36,6 @@ fn get_points(input: &str) -> u32 {
 
         let temp_points = match winners {
             0 => 0,
-            1 => 1,
             num => 2u32.pow(num - 1)
         };
 
