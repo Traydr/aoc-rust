@@ -58,13 +58,7 @@ fn main() {
                 }
             }
         }
-
-        let power_set = current_red * current_green * current_blue;
-        println!("Power of {game_num} is {power_set}");
-
-
         sum_power_sets += current_red * current_green * current_blue;
-
 
         current_red = 0;
         current_green = 0;
