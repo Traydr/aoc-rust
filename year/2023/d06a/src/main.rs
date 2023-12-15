@@ -12,8 +12,9 @@ Distance:  9  40  200";
 }
 
 fn get_num_ways(input: &str) -> u32 {
-    let mut sum_ways: u32 = 0;
+    let mut sum_ways: u32 = 1;
     let mut vec_of_nums: Vec<Vec<u32>> = Vec::new();
+    let mut winning_nums: Vec<u32> = Vec::new();
 
     let lines: Vec<&str> = input.lines().collect();
 
@@ -24,6 +25,7 @@ fn get_num_ways(input: &str) -> u32 {
                 .split(' ')
                 .map(|x| x.trim())
                 .filter(|x| !x.is_empty())
+                .filter(|x| is_num(x.chars()))
                 .map(|x| x.parse::<u32>().unwrap())
                 .collect())
     }
@@ -31,6 +33,19 @@ fn get_num_ways(input: &str) -> u32 {
     for i in 0..vec_of_nums[0].len() {
         let time: u32 = vec_of_nums[0][i];
         let distance: u32 = vec_of_nums[1][i];
+        let mut winning: u32 = 0;
+
+        for j in 0..time {
+            if (j * (time - j)) > distance {
+                winning += 1;
+            }
+        }
+
+        winning_nums.push(winning);
+    }
+
+    for num in winning_nums {
+        sum_ways *= num;
     }
 
     return sum_ways;
